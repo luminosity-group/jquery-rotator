@@ -7,15 +7,13 @@
     $.fn.rotator = function(options) {
         var container = this;
         var defaults = {
-            interval: 2000,
+            interval: 4000,
             randomize: false,
             fadetime: 500
         };
 
-        var halt = false;
-
+        /* Merge options with defaults */
         var settings = $.extend(true, {}, defaults, options);
-        console.log(settings);
 
         /* First, hide all the elements */
         $('li', container).each(function(){
@@ -33,21 +31,16 @@
             $('li', container).first().show().addClass('active');
         }
 
-        $(window).blur(function() { halt = true; });
-        $(window).focus(function() { halt = false; });
-
         /* Does the fadein/fadeout to the next item in the list */
         function rotate() {
-            if (!halt) {
-                var current = $('li.active', container);
-                $('li', container).hide().removeClass('active');
-                if ($(current).next().length > 0) {
-                    $(current).fadeOut(settings.fadetime).next().fadeIn(settings.fadetime).addClass('active');
-                }
-                else {
-                    $(current).fadeOut(settings.fadetime);
-                    $('li:first-child', container).fadeIn(settings.fadetime).addClass('active');
-                }
+            var current = $('li.active', container);
+            $('li', container).hide().removeClass('active');
+            if ($(current).next().length > 0) {
+                $(current).fadeOut(settings.fadetime).next().fadeIn(settings.fadetime).addClass('active');
+            }
+            else {
+                $(current).fadeOut(settings.fadetime);
+                $('li:first-child', container).fadeIn(settings.fadetime).addClass('active');
             }
             setTimeout(rotate, settings.interval);
         }
