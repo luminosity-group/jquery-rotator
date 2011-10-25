@@ -34,7 +34,7 @@
         /* Does the fadein/fadeout to the next item in the list */
         function rotate() {
             var current = $('li.active', container);
-            $('li', container).hide().removeClass('active');
+            $('li', container).removeClass('active');
             if ($(current).next().length > 0) {
                 $(current).fadeOut(settings.fadetime).next().fadeIn(settings.fadetime).addClass('active');
             }

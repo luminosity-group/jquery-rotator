@@ -6,21 +6,41 @@
     <script type="text/javascript" src="js/rotator.js"></script>
     <script type="text/javascript">
         $(function(){
-            $('.rotator').rotator();
+            $('.rotator1').rotator();
+            $('.rotator2').rotator({
+                interval: 6000,
+                fadetime: 1000
+            });
         });
     </script>
     <style type="text/css" media="screen">
-        .rotator {
-            width: 200px;
+        .rotator1 {
+            height: 200px;
             line-height: 1.5em;
+        }
+        .rotator1 li {
+            position: absolute;
+            width: 200px;
+        }
+        .rotator2 li {
+            list-style: none;
+            position: absolute;
+            margin-left: -25px;
         }
     </style>
 </head>
 <body>
-    <ul class="rotator">
+    <h1>Text</h1>
+    <ul class="rotator1">
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus placerat molestie. Maecenas sodales, nisl ut semper elementum, ipsum magna dictum augue</li>
         <li>Etiam risus nisi, ornare in lobortis auctor, ultricies in elit. Maecenas euismod pulvinar molestie. Quisque ante velit, ultrices quis sollicitudin ut</li>
         <li>Sed non leo quis lectus laoreet ornare. In lorem sapien, luctus a luctus sit amet, pretium in enim. Ut nisl urna, mattis eget fringilla a, dapibus vel diam.</li>
+    </ul>
+    <h1>Images</h1>
+    <ul class="rotator2">
+        <li><img src="img/img1.png" /></li>
+        <li><img src="img/img2.png" /></li>
+        <li><img src="img/img3.png" /></li>
     </ul>
 </body>
 </html>
