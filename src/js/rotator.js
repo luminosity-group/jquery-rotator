@@ -1,0 +1,57 @@
+/*
+ * Banner rotator plugin for jQuery
+ *
+ * Copyright (c) 2011 Luminosity Group
+ */
+(function($) {
+    $.fn.rotator = function(options) {
+        var container = this;
+        var defaults = {
+            interval: 2000,
+            randomize: false,
+            fadetime: 500
+        };
+
+        var halt = false;
+
+        var settings = $.extend(true, {}, defaults, options);
+        console.log(settings);
+
+        /* First, hide all the elements */
+        $('li', container).each(function(){
+            $(this).hide();
+        });
+
+        /* If randomize is set, pick an element randomly and show it, else show
+         * the first element 
+         */
+        if (settings.randomize) {
+            var size = $('li', container).length;
+            var i = Math.floor(Math.random() * size) + 1;
+            $('li:nth-child(' + i + ')', container).show().addClass('active');
+        } else {
+            $('li', container).first().show().addClass('active');
+        }
+
+        $(window).blur(function() { halt = true; });
+        $(window).focus(function() { halt = false; });
+
+        /* Does the fadein/fadeout to the next item in the list */
+        function rotate() {
+            if (!halt) {
+                var current = $('li.active', container);
+                $('li', container).hide().removeClass('active');
+                if ($(current).next().length > 0) {
+                    $(current).fadeOut(settings.fadetime).next().fadeIn(settings.fadetime).addClass('active');
+                }
+                else {
+                    $(current).fadeOut(settings.fadetime);
+                    $('li:first-child', container).fadeIn(settings.fadetime).addClass('active');
+                }
+            }
+            setTimeout(rotate, settings.interval);
+        }
+
+        setTimeout(rotate, settings.interval);
+    };
+})(jQuery);
