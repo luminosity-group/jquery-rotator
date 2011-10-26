@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Example</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/rotator.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.rotator1').rotator();
+            $('.rotator2').rotator({
+                interval: 6000,
+                fadetime: 1000
+            });
+        });
+    </script>
+    <style type="text/css" media="screen">
+        /* Text Rotator */
+        .rotator1 {
+            height: 170px;
+            line-height: 1.5em;
+        }
+        .rotator1 li {
+            list-style: none;
+            position: absolute;
+            width: 200px;
+        }
+
+        /* Image Rotator */
+        .rotator2 li {
+            list-style: none;
+            position: absolute;
+            margin-left: -25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" style="width: 800px; margin: 0 auto;">
+        <h2>Luminosity Group Banner Rotator Plugin for jQuery</h2>
+        <ul>
+            <li>No dependencies on jQuery "everytime" plugin.</li>
+            <li>Doesn't require stopping the timer when the window loses focus.</li>
+            <li>Configurable.</li>
+        </ul>
+        <hr />
+        <h3>Text</h3>
+        <ul class="rotator1">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus placerat molestie. Maecenas sodales, nisl ut semper elementum, ipsum magna dictum augue</li>
+            <li>Etiam risus nisi, ornare in lobortis auctor, ultricies in elit. Maecenas euismod pulvinar molestie. Quisque ante velit, ultrices quis sollicitudin ut</li>
+            <li>Sed non leo quis lectus laoreet ornare. In lorem sapien, luctus a luctus sit amet, pretium in enim. Ut nisl urna, mattis eget fringilla a, dapibus vel diam.</li>
+        </ul>
+        <h3>Images</h3>
+        <ul class="rotator2">
+            <li><img src="img/img1.png" /></li>
+            <li><img src="img/img2.png" /></li>
+            <li><img src="img/img3.png" /></li>
+        </ul>
+    </div>
+</body>
+</html>
