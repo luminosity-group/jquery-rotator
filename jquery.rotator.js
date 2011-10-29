@@ -1,9 +1,9 @@
-/*
- * Banner rotator plugin for jQuery
- *
- * Copyright (c) 2011 Luminosity Group
- */
-(function($) {
+;(function($) {
+    /*
+     * Banner rotator plugin for jQuery
+     *
+     * Copyright (c) 2011 Luminosity Group
+     */
     $.fn.rotator = function(options) {
         var container = this;
         var defaults = {
