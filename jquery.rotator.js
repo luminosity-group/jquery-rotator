@@ -1,7 +1,7 @@
 ;(function($) {
     /*
      * Banner rotator plugin for jQuery
-     * Version 0.2.1
+     * Version 0.2.2
      *
      * Copyright (c) 2011 Luminosity Group
      */
