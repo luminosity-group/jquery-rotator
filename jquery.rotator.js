@@ -10,7 +10,8 @@
         var defaults = {
             interval: 4000,
             randomize: false,
-            fadetime: 500,
+            fadeInTime: 500,
+            fadeOutTime: 1000,
             stopOnBlur: false
         };
 
@@ -49,12 +50,13 @@
             if (!settings.stopOnBlur || (settings.stopOnBlur && !stopped)) {
                 var current = $('li.active', container);
                 $('li', container).removeClass('active');
+
                 if ($(current).next().length > 0) {
-                    $(current).fadeOut(settings.fadetime).next().fadeIn(settings.fadetime).addClass('active');
+                    $(current).fadeOut(settings.fadeInTime).next().fadeIn(settings.fadeOutTime).addClass('active');
                 }
                 else {
                     $(current).fadeOut(settings.fadetime);
-                    $('li:first-child', container).fadeIn(settings.fadetime).addClass('active');
+                    $('li:first-child', container).fadeIn(settings.fadeInTime).addClass('active');
                 }
             }
 

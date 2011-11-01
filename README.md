@@ -26,11 +26,20 @@ Options
 	});
 
 * * *
-**fadetime**: Specifies the time spent doing the fade animation in ms. Defaults to 0.5 seconds.
+**fadeInTime**: Specifies the time spent doing the fadeIn animation in ms. Defaults to 0.5 seconds.
 
 	$(function() {
 		$('.rotate').rotator({
-			fadetime: 1500
+			fadeInTime: 1500
+		});
+	});
+
+* * *
+**fadeOutTime**: Specifies the time spent doing the fadeOut animation in ms. Defaults to 1 seconds.
+
+	$(function() {
+		$('.rotate').rotator({
+			fadeOutTime: 1500
 		});
 	});
 
