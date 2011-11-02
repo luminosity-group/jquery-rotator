@@ -1,7 +1,7 @@
 /*global window, setTimeout, jQuery */
 (function ($) {
     /* Banner rotator plugin for jQuery
-     * Version 0.2.2
+     * Version 0.2.3
      *
      * Copyright (c) 2011 Luminosity Group
      */
